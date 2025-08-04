@@ -5,10 +5,10 @@ PMLoRA: Progressive and Masked Low-Rank Adaptation for Facial Action Unit Detect
 
 ## FTCA
 In the FTCA module, we split the predicted sequence features along the temporal axis:
-'''
+```
     x_past = x[:, :, :half_t]   # F_near
     x_future = x[:, :, half_t:] # F_distant
-'''
+```
     1. F_distant is used as the Query, and F_near is used as the Key and Value in a cross-attention mechanism.
     2. The attention output goes through a gated fusion step to merge near-future and distant-future temporal information.
     3. Finally, the processed F_distant and F_near features are concatenated to form the final output.

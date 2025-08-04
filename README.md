@@ -1,9 +1,9 @@
 # PMLoRA
 PMLoRA: Progressive and Masked Low-Rank Adaptation for Facial Action Unit Detection
 
-###Future-Temporal Cross Attention (FTCA) and Feature Evolution Matrix (FEM)
+### Future-Temporal Cross Attention (FTCA) and Feature Evolution Matrix (FEM)
 
-##FTCA
+## FTCA
 In the FTCA module, we split the predicted sequence features along the temporal axis:
 '''
     x_past = x[:, :, :half_t]   # F_near
@@ -14,7 +14,7 @@ In the FTCA module, we split the predicted sequence features along the temporal 
     3. Finally, the processed F_distant and F_near features are concatenated to form the final output.
 
 
-##FEM
+## FEM
 The FEM module processes near-future frames as follows:
     1. Pass near-future frame features through a filtering module (class FilterBlockProj) .
     2. Use these filtered features to compute a similarity matrix (def FEM_MATRIX), which is then used to build the evolution matrix.

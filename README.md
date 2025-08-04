@@ -16,6 +16,7 @@ In the FTCA module, we split the predicted sequence features along the temporal 
 
 ## FEM
 The FEM module processes near-future frames as follows:
+
     1. Pass near-future frame features through a filtering module (class FilterBlockProj) .
     2. Use these filtered features to compute a similarity matrix (def FEM_MATRIX), which is then used to build the evolution matrix.
     3. This evolution matrix serves as context, and is used in a cross-attention operation (class FEM) with distant-future features.
